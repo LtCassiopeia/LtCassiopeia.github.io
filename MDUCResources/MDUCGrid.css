@@ -1,0 +1,32 @@
+.container {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: 300px auto;
+	grid-template-areas:
+		"OutputBox OutputBox"
+		"TableMDUC PreviewImage";
+	gap: 10px;
+	margin: auto;
+	max-width: 822px;
+	min-width: 200px;
+	background-color: #00000000;
+}
+
+.TableMDUC {
+	grid-area: TableMDUC;
+}
+
+table, tr, td, #MDUCPreview {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+img {
+	grid-area: PreviewImage;
+	position: sticky;
+	top: 8;
+	max-width:100%;
+	width:512px;
+	aspect-ratio:1;
+	align-self: left;
+}

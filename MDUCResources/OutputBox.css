@@ -1,0 +1,38 @@
+#OutputBox {
+	display: flex;
+	flex-wrap: nowrap;
+	grid-area: OutputBox;
+	min-width: 200px;
+	border: 1px solid black;
+	text-align: center;
+	font-size: var(--OutfitCodeTextSize);
+	padding: 10px;
+}
+
+#OutfitCode {
+	border: 0px;
+	text-align: center;
+	font-size: var(--OutfitCodeTextSize);
+}
+
+#OutputBox > * {
+	min-width: 200px;
+}
+
+#OutputBox > .left {
+	text-align: left;
+	white-space: nowrap;
+	flex: 1 99 5px;
+}
+
+#OutputBox > .mid {
+	text-align: center;
+	white-space: nowrap;
+	flex: 99 1 5px;
+}
+
+#OutputBox > .right {
+	text-align: right;
+	white-space: nowrap;
+	flex: 1 99 5px;
+}

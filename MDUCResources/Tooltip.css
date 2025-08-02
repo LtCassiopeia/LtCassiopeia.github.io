@@ -1,0 +1,28 @@
+@keyframes FlashTooltip {
+	0%		{opacity: 0;}
+	10%		{opacity: 1;}
+	75%		{opacity: 1;}
+	100%	{opacity: 0;}
+}
+
+#OutputBox + .tooltiptext {
+	width: 40%;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 10px;
+	position: absolute;
+	z-index: -10;
+	top: 10%;
+	left: 29.5%;
+	font-size: 15px;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+#OutputBox + .ShowToolTip {
+	z-index: 1;
+	opacity: 1;
+	transition: opacity .25s;
+}

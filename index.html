@@ -1,7 +1,72 @@
 <!DOCTYPE html>
 <html>
+	<link rel="stylesheet" href="MDUCResources\Tooltip.css">
+	<link rel="stylesheet" href="MDUCResources\OutputBox.css">
+	<link rel="stylesheet" href="MDUCResources\MDUCGrid.css">
+	<style>
+	:root {
+		--OutfitCodeTextSize: 24px;
+	}
+	.disabled {
+		color: #aaaaaa;
+		background-color: pink;
+	}
+</style>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+		
+<div class="container">
+<div id="OutputBox">
+	<span class="left"><label for="OutfitCode">
+	Outfit Code</label>:&nbsp&nbsp </span><input readonly id="OutfitCode" class="tooltip mid" type="text" onClick="CopyCode(this)" value="------------" autocomplete="off"><span class="right"> &nbsp&nbsp:Outfit Code</span>
+</div>
+<span id="tooltiptext" class="tooltiptext">!Copied!<br>Verify no checkboxes are red before pasting<br>MDUC points are ineligible for refund</span>
+<table width=300px class="TableMDUC">
+<tbody>
+<col width=0>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Lthj" autocomplete="off"></td>	<td><label for="Lthj">&nbsp Leather Jacket </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Lasc" autocomplete="off"></td>	<td><label for="Lasc">&nbsp Lace Swim Cover </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Cyco" autocomplete="off"></td>	<td><label for="Cyco">&nbsp Cyber Collar </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Spco" autocomplete="off"></td>	<td><label for="Spco">&nbsp Spiky Collar </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Swtt" autocomplete="off"></td>	<td><label for="Swtt">&nbsp Sweat Top </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Lthd" autocomplete="off"></td>	<td><label for="Lthd">&nbsp Leather Dress </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Hlts" autocomplete="off"></td>	<td><label for="Hlts">&nbsp Halter Swim Cover </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Cyht" autocomplete="off"></td>	<td><label for="Cyht">&nbsp Cyber Halter Top </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Ttbt" autocomplete="off"></td>	<td><label for="Ttbt">&nbsp 2 Tone Bikini Top </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Cybs" autocomplete="off"></td>	<td><label for="Cybs">&nbsp Cyber Bodysuit </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Swtp" autocomplete="off"></td>	<td><label for="Swtp">&nbsp Sweat Pants </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Swts" autocomplete="off"></td>	<td><label for="Swts">&nbsp Sweat Shorts </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Swtb" autocomplete="off"></td>	<td><label for="Swtb">&nbsp Sweat Booty Shorts </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Legb" autocomplete="off"></td>	<td><label for="Legb">&nbsp Leggings - Black </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Cybb" autocomplete="off"></td>	<td><label for="Cybb">&nbsp Cyber Bikini Bottoms </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Bikb" autocomplete="off"></td>	<td><label for="Bikb">&nbsp Bikini Bottoms </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Ttbb" autocomplete="off"></td>	<td><label for="Ttbb">&nbsp 2 Tone Bikini Bottoms </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Boyp" autocomplete="off"></td>	<td><label for="Boyp">&nbsp Boyshort Panties </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Hipp" autocomplete="off"></td>	<td><label for="Hipp">&nbsp Hipster Panties </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Thnp" autocomplete="off"></td>	<td><label for="Thnp">&nbsp Thong </label></td></tr>
+<tr class="HoverableLine">	<td><input type="checkbox" id="Mict" autocomplete="off"></td>	<td><label for="Mict">&nbsp Micro Thong </label></td></tr>
+</tbody>
+</table>
+<img id="MDUCPreview">
+</div>
+
+<script src="MDUCResources\DataAttributes.js"></script>
+<script src="MDUCResources\MDUCHover.js"></script> 
+<script src="MDUCResources\MDUCValidate.js"></script> 
+<script>
+function CopyCode(x) {
+	const tooltipID = document.getElementById("tooltiptext");
+	tooltipID.classList.add("ShowToolTip");
+	const myTimeout = setTimeout(HideToolTip, 2500, tooltipID);
+	x.select();
+	navigator.clipboard.writeText(x.value);
+	console.log("Copied > " + x.value);
+}
+function HideToolTip(x) {
+	x.classList.remove("ShowToolTip");
+}
+</script>
+
+
+
 </body>
 </html>
